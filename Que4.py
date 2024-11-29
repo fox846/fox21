@@ -51,3 +51,10 @@ root_node = max(info_gains, key=info_gains.get)
 
 print("Information Gain for each attribute:", info_gains)
 print("Root Node of the Decision Tree:", root_node)
+
+import matplotlib.pyplot as plt 
+from sklearn.tree import plot_tree 
+plt.figure(figsize=(12, 8))
+plot_tree(clf, feature_names=X.columns, class_names=encoders['Buys'].classes_, filled=True)
+plt.title("Decision Tree Visualization")
+plt.show()
